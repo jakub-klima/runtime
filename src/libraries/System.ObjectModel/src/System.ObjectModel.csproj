@@ -10,6 +10,7 @@
     <Compile Include="System\Collections\Specialized\INotifyCollectionChanged.cs" />
     <Compile Include="System\Collections\Specialized\NotifyCollectionChangedAction.cs" />
     <Compile Include="System\Collections\Specialized\NotifyCollectionChangedEventArgs.cs" />
+    <Compile Include="System\Collections\ObjectModel\IReadOnlyObservableCollection.cs" />
     <Compile Include="System\Collections\ObjectModel\KeyedCollection.cs" />
     <Compile Include="System\Collections\ObjectModel\ObservableCollection.cs" />
     <Compile Include="System\Collections\ObjectModel\ReadOnlyDictionary.cs" />

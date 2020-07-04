@@ -17,7 +17,7 @@ namespace System.Collections.ObjectModel
     [DebuggerTypeProxy(typeof(CollectionDebugView<>))]
     [DebuggerDisplay("Count = {Count}")]
     [TypeForwardedFrom("WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")]
-    public class ReadOnlyObservableCollection<T> : ReadOnlyCollection<T>, INotifyCollectionChanged, INotifyPropertyChanged
+    public class ReadOnlyObservableCollection<T> : ReadOnlyCollection<T>, IReadOnlyObservableCollection<T>
     {
         /// <summary>
         /// Initializes a new instance of ReadOnlyObservableCollection that

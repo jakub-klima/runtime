@@ -7,6 +7,9 @@
 
 namespace System.Collections.ObjectModel
 {
+    public partial interface IReadOnlyObservableCollection<T> : System.Collections.Generic.IReadOnlyList<T>, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.INotifyPropertyChanged
+    {
+    }
     public abstract partial class KeyedCollection<TKey, TItem> : System.Collections.ObjectModel.Collection<TItem> where TKey : notnull
     {
         protected KeyedCollection() { }
@@ -25,7 +28,7 @@ namespace System.Collections.ObjectModel
         protected override void SetItem(int index, TItem item) { }
         public bool TryGetValue(TKey key, [System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out TItem item) { throw null; }
     }
-    public partial class ObservableCollection<T> : System.Collections.ObjectModel.Collection<T>, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.INotifyPropertyChanged
+    public partial class ObservableCollection<T> : System.Collections.ObjectModel.Collection<T>, System.Collections.ObjectModel.IReadOnlyObservableCollection<T>
     {
         public ObservableCollection() { }
         public ObservableCollection(System.Collections.Generic.IEnumerable<T> collection) { }
@@ -115,7 +118,7 @@ namespace System.Collections.ObjectModel
             System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { throw null; }
         }
     }
-    public partial class ReadOnlyObservableCollection<T> : System.Collections.ObjectModel.ReadOnlyCollection<T>, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.INotifyPropertyChanged
+    public partial class ReadOnlyObservableCollection<T> : System.Collections.ObjectModel.ReadOnlyCollection<T>, System.Collections.ObjectModel.IReadOnlyObservableCollection<T>
     {
         public ReadOnlyObservableCollection(System.Collections.ObjectModel.ObservableCollection<T> list) : base (default(System.Collections.Generic.IList<T>)) { }
         protected virtual event System.Collections.Specialized.NotifyCollectionChangedEventHandler? CollectionChanged { add { } remove { } }
